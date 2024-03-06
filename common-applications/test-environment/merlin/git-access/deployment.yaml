@@ -18,9 +18,11 @@ spec:
         vault.hashicorp.com/role: 'merlin'
         vault.hashicorp.com/agent-inject-secret-server.crt: 'internal/data/infra-test/merlin'
         vault.hashicorp.com/agent-inject-secret-server.key: 'internal/data/infra-test/merlin'
+        vault.hashicorp.com/agent-inject-secret-redis.crt: 'internal/data/infra-test/merlin'
         vault.hashicorp.com/agent-pre-populate-only: "true"
         vault.hashicorp.com/agent-inject-perms-server.crt: "0400"
         vault.hashicorp.com/agent-inject-perms-server.key: "0400"
+        vault.hashicorp.com/agent-inject-perms-redis.crt: "0400"
         vault.hashicorp.com/agent-run-as-user: "1000"
         vault.hashicorp.com/agent-run-as-group: "1000"
         vault.hashicorp.com/agent-inject-secret-compose-config.yml: 'internal/data/infra-test/merlin'
@@ -36,6 +38,10 @@ spec:
         vault.hashicorp.com/agent-inject-template-server.key: |  
           {{- with secret "internal/data/infra-test/merlin" -}}  
           {{ .Data.data.ServerKey }}
+          {{- end }}
+        vault.hashicorp.com/agent-inject-template-redis.crt: |  
+          {{- with secret "internal/data/infra-test/merlin" -}}  
+          {{ .Data.data.redisCA }}
           {{- end }}
         vault.hashicorp.com/agent-service-account-token-volume-name: "token-vol"
       labels:
