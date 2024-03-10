@@ -7,7 +7,7 @@ commonAnnotations:
   kubernetes.ops.region: shanghai
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/gitea/merlin-server-test
-  newTag: yw_forbid_after_revoke_privacy-204ede
+  newTag: yw_forbid_after_revoke_privacy-e64873
 kind: Kustomization
 namespace: merlin
 resources:
