@@ -5,7 +5,7 @@ metadata:
   namespace: merlin-02
 spec:
   scaleTargetRef:
-    name: label
+    name: message-server
   triggers:
   - type: cron
     metadata:
