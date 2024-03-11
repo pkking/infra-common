@@ -12,3 +12,6 @@ resources:
 - deployment.yaml
 - autoscaler.yaml
 - ingress.yaml
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/easysoftware/easysoftware-monitoring-test
+  newTag: master-b6006a
